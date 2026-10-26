@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07539a">
+  <meta name="description" content="Shop phones, fashion, electronics, home essentials and more with Laxus Store in Kalaburagi. Contact us directly by call or WhatsApp.">
+  <title>Laxus Store | Shop Smart, Live Better</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307539a'/%3E%3Cpath d='M18 25h28l-3 27H21z' fill='%23f8f5ee'/%3E%3Cpath d='M24 27v-7a8 8 0 0 1 16 0v7' fill='none' stroke='%23f8f5ee' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f8f6f0;
+      --paper-deep: #f0eee7;
+      --ink: #12324d;
+      --muted: #617487;
+      --blue: #07539a;
+      --blue-bright: #0878e8;
+      --blue-pale: #e8f2fb;
+      --line: #d5e2ec;
+      --green: #08ad68;
+      --gold: #e4a33a;
+      --radius: 18px;
+      --shadow: 0 14px 34px rgba(18, 50, 77, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: "DM Sans", sans-serif; line-height: 1.6; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    .container { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+    .section { padding: 76px 0; }
+    .eyebrow { margin: 0 0 9px; color: var(--blue-bright); font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: "Playfair Display", serif; line-height: 1.12; }
+    h1 { font-size: clamp(2.55rem, 5vw, 4.45rem); margin-bottom: 18px; letter-spacing: -.035em; }
+    h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 12px; letter-spacing: -.025em; }
+    h3 { font-size: 1.25rem; margin-bottom: 8px; }
+    .section-intro { max-width: 650px; color: var(--muted); margin-bottom: 32px; }
+    .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 30px; }
+    .section-heading .section-intro { margin-bottom: 0; }
+    .btn { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 20px; border: 1px solid transparent; border-radius: 999px; font-size: .9rem; font-weight: 700; transition: transform .2s, background .2s; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #fff; background: var(--blue-bright); box-shadow: 0 8px 18px rgba(8,120,232,.18); }
+    .btn-whatsapp { color: #fff; background: var(--green); }
+    .btn-outline { border-color: var(--blue-bright); color: var(--blue); background: transparent; }
+    .btn-small { min-height: 38px; padding: 8px 13px; font-size: .8rem; }
+    .icon { width: 20px; height: 20px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    /* Header */
+    .header { position: sticky; top: 0; z-index: 50; background: rgba(248,246,240,.96); border-bottom: 1px solid rgba(213,226,236,.85); backdrop-filter: blur(12px); }
+    .nav-wrap { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 11px; min-width: max-content; }
+    .brand-mark { display: grid; place-items: center; width: 46px; height: 46px; color: #fff; background: var(--blue-bright); border-radius: 14px 14px 14px 5px; box-shadow: 0 7px 16px rgba(8,120,232,.2); }
+    .brand-mark .icon { width: 27px; height: 27px; }
+    .brand-name { display: block; font-family: "Playfair Display", serif; font-weight: 800; font-size: 1.65rem; line-height: 1; color: var(--blue); }
+    .brand-tag { display: block; margin-top: 4px; color: var(--muted); font-size: .72rem; font-weight: 600; }
+    .nav-links { display: flex; align-items: center; gap: clamp(14px, 2vw, 28px); font-size: .86rem; font-weight: 600; }
+    .nav-links a { padding: 8px 0; color: var(--ink); }
+    .nav-links a:hover { color: var(--blue-bright); }
+    .nav-actions { display: flex; align-items: center; gap: 8px; }
+    .nav-actions .btn { min-height: 42px; padding: 9px 14px; }
+    .menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid var(--line); background: transparent; border-radius: 12px; color: var(--ink); }
+    /* Hero */
+    .hero { position: relative; overflow: hidden; padding: 48px 0 56px; }
+    .hero-grid { display: grid; grid-template-columns: .95fr 1.05fr; align-items: center; gap: 38px; }
+    .hero-copy { position: relative; z-index: 2; padding: 18px 0; }
+    .hero-copy h1 span { color: var(--blue-bright); }
+    .hero-copy > p:not(.eyebrow) { max-width: 510px; color: var(--muted); font-size: 1.06rem; }
+    .proof-line { display: flex; flex-wrap: wrap; gap: 10px 18px; margin: 22px 0 28px; color: var(--ink); font-size: .88rem; font-weight: 600; }
+    .proof-line span { display: inline-flex; align-items: center; gap: 7px; }
+    .proof-line span::before { content: "✓"; display: grid; place-items: center; width: 19px; height: 19px; color: var(--blue); background: var(--blue-pale); border-radius: 50%; font-size: .72rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-visual { min-height: 420px; position: relative; }
+    .hero-photo { position: absolute; inset: 0 0 18px 18px; overflow: hidden; border-radius: 48% 18px 18px 18px; background: var(--blue-pale); }
+    .hero-photo img { object-position: center; }
+    .hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(7,39,69,.22), transparent 55%); pointer-events: none; }
+    .hero-sticker { position: absolute; right: -5px; bottom: 0; z-index: 2; max-width: 205px; padding: 22px 25px; color: #fff; background: var(--blue); border-radius: 18px 18px 4px 18px; box-shadow: var(--shadow); transform: rotate(2deg); }
+    .hero-sticker strong { display: block; font-family: "Playfair Display", serif; font-size: 1.4rem; line-height: 1.15; }
+    .hero-sticker small { display: block; margin-top: 7px; opacity: .86; }
+    .corner-motif { position: absolute; left: -17px; top: 32px; width: 82px; height: 82px; color: var(--blue-bright); opacity: .55; }
+    /* Trust strip */
+    .trust-strip { background: var(--blue-pale); border-block: 1px solid var(--line); }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .trust-item { display: flex; align-items: center; gap: 13px; padding: 24px 18px; border-right: 1px solid #c7dbea; }
+    .trust-item:first-child { padding-left: 0; }
+    .trust-item:last-child { border-right: 0; }
+    .trust-icon { display: grid; place-items: center; width: 44px; height: 44px; flex: 0 0 auto; color: #fff; background: var(--blue); border-radius: 14px; }
+    .trust-item strong { display: block; font-size: .9rem; line-height: 1.3; }
+    .trust-item small { color: var(--muted); font-size: .76rem; }
+    /* Products */
+    .products { background: #fbfaf6; }
+    .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .product-card { overflow: hidden; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); transition: transform .2s, box-shadow .2s; }
+    .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .product-image { height: 165px; overflow: hidden; background: var(--blue-pale); }
+    .product-image img { transition: transform .45s; }
+    .product-card:hover .product-image img { transform: scale(1.05); }
+    .product-content { padding: 18px; }
+    .product-content p { min-height: 45px; margin-bottom: 13px; color: var(--muted); font-size: .86rem; }
+    .price { display: block; margin-bottom: 14px; color: var(--blue); font-weight: 800; font-size: .95rem; }
+    .product-content .btn { width: 100%; }
+    .price-note { margin-top: 18px; color: var(--muted); font-size: .8rem; }
+    /* About */
+    .about-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 60px; align-items: center; }
+    .owner-line { display: flex; align-items: center; gap: 15px; margin-bottom: 22px; }
+    .avatar { display: grid; place-items: center; width: 70px; height: 70px; flex: 0 0 auto; color: white; background: var(--blue); border-radius: 50%; font-family: "Playfair Display", serif; font-size: 1.5rem; font-weight: 700; }
+    .owner-line h3 { margin: 0 0 4px; }
+    .owner-line p { margin: 0; color: var(--muted); font-size: .88rem; }
+    .about-copy p { color: var(--muted); }
+    .about-copy .signature { margin: 22px 0 0; color: var(--blue); font-family: "Playfair Display", serif; font-size: 1.6rem; font-style: italic; }
+    .feature-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 22px; background: var(--blue-pale); border-radius: 24px; }
+    .feature { display: flex; gap: 12px; padding: 17px 12px; }
+    .feature-icon { display: grid; place-items: center; width: 36px; height: 36px; flex: 0 0 auto; color: #fff; background: var(--blue-bright); border-radius: 12px; }
+    .feature strong { display: block; font-size: .88rem; }
+    .feature small { display: block; color: var(--muted); font-size: .77rem; }
+    /* Gallery */
+    .gallery { background: var(--paper-deep); }
+    .gallery-grid { display: grid; grid-template-columns: 1.25fr .8fr 1fr 1fr; grid-template-rows: 190px 190px; gap: 14px; }
+    .gallery-item { position: relative; overflow: hidden; border-radius: 15px; background: var(--blue-pale); }
+    .gallery-item:first-child { grid-row: span 2; }
+    .gallery-item:nth-child(4) { grid-column: span 2; }
+    .gallery-item img { transition: transform .4s; }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-item::after { content: ""; position: absolute; inset: 40% 0 0; background: linear-gradient(transparent, rgba(11,35,58,.45)); }
+    .gallery-label { position: absolute; z-index: 1; bottom: 13px; left: 15px; color: #fff; font-size: .82rem; font-weight: 700; }
+    /* Testimonials */
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .review-card { padding: 24px; background: #fbfaf6; border: 1px solid var(--line); border-radius: var(--radius); }
+    .stars { display: flex; gap: 3px; margin-bottom: 15px; color: var(--gold); }
+    .stars svg { width: 17px; height: 17px; fill: currentColor; }
+    .review-card blockquote { margin: 0 0 18px; color: var(--muted); font-size: .94rem; }
+    .reviewer { display: flex; align-items: center; gap: 11px; }
+    .reviewer-avatar { display: grid; place-items: center; width: 40px; height: 40px; color: white; background: var(--blue); border-radius: 50%; font-weight: 700; }
+    .reviewer strong { display: block; font-size: .88rem; }
+    .reviewer small { color: var(--muted); font-size: .78rem; }
+    .review-note { color: var(--muted); font-size: .8rem; margin-top: 18px; }
+    /* Pricing */
+    .pricing { background: var(--blue-pale); }
+    .price-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 50px; border-top: 1px solid #c7dbea; }
+    .price-row { display: flex; justify-content: space-between; gap: 18px; padding: 17px 0; border-bottom: 1px solid #c7dbea; }
+    .price-row span { font-weight: 600; }
+    .price-row strong { color: var(--blue); white-space: nowrap; }
+    /* Contact */
+    .contact-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 35px; align-items: stretch; }
+    .contact-info { display: flex; flex-direction: column; gap: 14px; }
+    .contact-method { display: flex; align-items: center; gap: 13px; padding: 14px; border: 1px solid var(--line); border-radius: 14px; }
+    .contact-method .trust-icon { width: 40px; height: 40px; border-radius: 12px; }
+    .contact-method strong { display: block; font-size: .9rem; }
+    .contact-method small { display: block; color: var(--muted); overflow-wrap: anywhere; }
+    .hours-card { margin-top: 6px; padding: 20px; background: var(--blue-pale); border-radius: 16px; }
+    .hours-row { display: flex; justify-content: space-between; gap: 14px; padding: 7px 0; font-size: .86rem; }
+    .hours-row strong { text-align: right; }
+    .map-wrap { min-height: 420px; overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: var(--blue-pale); }
+    .map-wrap iframe { display: block; width: 100%; height: 100%; min-height: 420px; border: 0; }
+    /* Footer */
+    .footer { padding: 38px 0 95px; color: #fff; background: #06477f; }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr auto; gap: 35px; align-items: center; }
+    .footer .brand-name, .footer .brand-tag { color: #fff; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 12px 20px; font-size: .85rem; }
+    .footer-links a:hover { text-decoration: underline; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; align-items: center; margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.22); color: rgba(255,255,255,.78); font-size: .76rem; }
+    .credit { text-transform: lowercase; letter-spacing: .02em; }
+    /* Mobile action bar */
+    .mobile-bar { display: none; }
+    @media (max-width: 1080px) {
+      .nav-wrap { gap: 14px; }
+      .nav-links { gap: 14px; }
+      .nav-actions .btn { padding-inline: 11px; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .product-image { height: 210px; }
+      .trust-item { padding-inline: 12px; }
+      .about-grid { gap: 35px; }
+    }
+    @media (max-width: 820px) {
+      .container { width: min(100% - 32px, 650px); }
+      .section { padding: 58px 0; }
+      .nav-wrap { min-height: 72px; }
+      .nav-links { display: none; position: absolute; top: 71px; left: 0; right: 0; padding: 16px 22px 22px; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: var(--shadow); flex-direction: column; align-items: stretch; gap: 5px; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 0; }
+      .nav-actions .btn { display: none; }
+      .menu-toggle { display: grid; place-items: center; }
+      .hero { padding-top: 30px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 25px; }
+      .hero-copy { padding-top: 10px; }
+      .hero-visual { min-height: 360px; }
+      .hero-photo { inset: 0 15px 18px 0; border-radius: 100px 18px 18px 18px; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .trust-item { border-bottom: 1px solid #c7dbea; }
+      .trust-item:nth-child(2) { border-right: 0; }
+      .trust-item:nth-child(3), .trust-item:nth-child(4) { border-bottom: 0; }
+      .trust-item:first-child { padding-left: 12px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 170px 170px; }
+      .gallery-item:first-child { grid-row: span 2; }
+      .gallery-item:nth-child(4) { grid-column: auto; }
+      .gallery-item:last-child { grid-column: span 2; }
+      .review-grid { grid-template-columns: 1fr; }
+      .review-card { padding: 21px; }
+      .map-wrap, .map-wrap iframe { min-height: 340px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > :last-child { grid-column: span 2; }
+      .footer-grid .btn { justify-self: start; }
+      .mobile-bar { position: fixed; z-index: 60; right: 0; bottom: 0; left: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(248,246,240,.97); border-top: 1px solid var(--line); box-shadow: 0 -8px 24px rgba(18,50,77,.09); }
+      .mobile-bar .btn { min-height: 47px; }
+    }
+    @media (max-width: 520px) {
+      .container { width: calc(100% - 28px); }
+      .section { padding: 48px 0; }
+      .brand-mark { width: 40px; height: 40px; }
+      .brand-name { font-size: 1.4rem; }
+      .brand-tag { font-size: .65rem; }
+      h1 { font-size: clamp(2.35rem, 12vw, 3.25rem); }
+      h2 { font-size: 2.15rem; }
+      .hero-copy > p:not(.eyebrow) { font-size: .98rem; }
+      .hero-visual { min-height: 285px; }
+      .hero-sticker { right: 0; max-width: 170px; padding: 16px; }
+      .hero-sticker strong { font-size: 1.15rem; }
+      .trust-item { padding: 15px 7px; gap: 9px; }
+      .trust-item:first-child { padding-left: 7px; }
+      .trust-icon { width: 36px; height: 36px; }
+      .trust-item strong { font-size: .78rem; }
+      .trust-item small { font-size: .69rem; }
+      .section-heading { display: block; }
+      .section-heading .section-intro { margin-top: 8px; }
+      .product-grid { gap: 11px; }
+      .product-image { height: 140px; }
+      .product-content { padding: 13px; }
+      .product-content h3 { font-size: 1.05rem; }
+      .product-content p { min-height: 58px; font-size: .79rem; }
+      .product-content .btn { padding-inline: 8px; font-size: .74rem; }
+      .price { font-size: .85rem; }
+      .feature-panel { grid-template-columns: 1fr; padding: 12px; }
+      .feature { padding: 11px 8px; }
+      .gallery-grid { grid-template-rows: 190px 135px 135px; gap: 9px; }
+      .gallery-label { font-size: .72rem; left: 10px; bottom: 9px; }
+      .price-list { grid-template-columns: 1fr; }
+      .price-row { padding: 14px 0; font-size: .9rem; }
+      .contact-grid { gap: 22px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 22px; }
+      .footer-grid > :last-child { grid-column: auto; }
+      .footer-bottom { align-items: flex-start; flex-direction: column; gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden">
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l1 13H4L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M21 16.5v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 10.2 18a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1.9 3.2 2 2 0 0 1 3.9 1h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.8L6.9 9.4a16 16 0 0 0 6 6l1.9-1.9a2 2 0 0 1 1.8-.6l3 .5a2 2 0 0 1 1.4 3.1Z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 5h12v12H3zM15 9h4l3 4v4h-7"/><circle cx="7.5" cy="19" r="2"/><circle cx="18.5" cy="19" r="2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M3 14v-3a9 9 0 0 1 18 0v3"/><path d="M5 14H3v5h4v-5H5ZM19 14h2v5h-4v-5h2ZM17 21h-5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="M3 8v9l9 5 9-5V8M12 13v9M7.5 5.5l9 5"/></symbol>
+  </svg>
+
+  <header class="header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Laxus Store home">
+        <span class="brand-mark"><svg class="icon"><use href="#i-bag"/></svg></span>
+        <span><span class="brand-name">laxus store</span><span class="brand-tag">Shop with an open heart</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#shop">Shop</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-outline" href="tel:+919180419323"><svg class="icon"><use href="#i-phone"/></svg>Call</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/919180419323?text=Hello%20Laxus%20Store%2C%20I%27d%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener"><svg class="icon"><use href="#i-chat"/></svg>WhatsApp</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><svg class="icon"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Your neighbourhood shopping store</p>
+          <h1>Good Finds.<br><span>Great Everyday</span> Value.</h1>
+          <p>Discover useful everyday products, explore new favourites, and get friendly help from your local Laxus Store.</p>
+          <div class="proof-line"><span>Helpful service</span><span>Easy enquiries</span><span>Local support</span></div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/919180419323?text=Hello%20Laxus%20Store%2C%20please%20share%20your%20available%20products%20and%20prices." target="_blank" rel="noopener"><svg class="icon"><use href="#i-chat"/></svg>Shop on WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+919180419323"><svg class="icon"><use href="#i-phone"/></svg>Call the Store</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <svg class="corner-motif" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M15 4 23 9v10l-8 5-8-5V9l8-5ZM55 30l8 5v10l-8 5-8-5V35l8-5ZM24 68l8 5v10l-8 5-8-5V73l8-5Z" stroke="currentColor" stroke-width="3"/><circle cx="79" cy="12" r="4" fill="currentColor"/><circle cx="75" cy="76" r="3" fill="currentColor"/></svg>
+          <div class="hero-photo"><img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=1000&auto=format&fit=crop" alt="Shopping bags and selected products"></div>
+          <div class="hero-sticker"><strong>Shop smart.<br>Live better.</strong><small>Everyday finds, friendly service.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Why shop with Laxus Store">
+      <div class="container trust-grid">
+        <div class="trust-item"><span class="trust-icon"><svg class="icon"><use href="#i-truck"/></svg></span><div><strong>Local Convenience</strong><small>Based in Kalaburagi</small></div></div>
+        <div class="trust-item"><span class="trust-icon"><svg class="icon"><use href="#i-shield"/></svg></span><div><strong>Ask Before You Buy</strong><small>Check details directly</small></div></div>
+        <div class="trust-item"><span class="trust-icon"><svg class="icon"><use href="#i-chat"/></svg></span><div><strong>Easy Enquiries</strong><small>Message us on WhatsApp</small></div></div>
+        <div class="trust-item"><span class="trust-icon"><svg class="icon"><use href="#i-headset"/></svg></span><div><strong>Friendly Support</strong><small>Here to help you choose</small></div></div>
+      </div>
+    </section>
+
+    <section class="section products" id="shop">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">Browse the collection</p><h2>Explore Our Categories</h2><p class="section-intro">Looking for something specific? Choose a category and message us to check current availability and pricing.</p></div></div>
+        <div class="product-grid">
+          <article class="product-card"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop" alt="Smartphone product category"></div><div class="product-content"><h3>Mobile Phones</h3><p>Smartphones, useful add-ons and everyday accessories.</p><span class="price">Ask for current prices</span><a class="btn btn-primary btn-small" href="https://wa.me/919180419323?text=Hello%20Laxus%20Store%2C%20I%27m%20interested%20in%20mobile%20phones%20and%20accessories." target="_blank" rel="noopener">Enquire on WhatsApp</a></div></article>
+          <article class="product-card"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&auto=format&fit=crop" alt="Fashion clothing category"></div><div class="product-content"><h3>Fashion &amp; Wear</h3><p>Explore clothing styles for everyday wear and occasions.</p><span class="price">Ask for current prices</span><a class="btn btn-primary btn-small" href="https://wa.me/919180419323?text=Hello%20Laxus%20Store%2C%20please%20share%20your%20available%20fashion%20and%20clothing%20options." target="_blank" rel="noopener">Enquire on WhatsApp</a></div></article>
+          <article class="product-card"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&auto=format&fit=crop" alt="Headphones and electronics"></div><div class="product-content"><h3>Electronics</h3><p>Useful gadgets and electronic essentials for daily life.</p><span class="price">Ask for current prices</span><a class="btn btn-primary btn-small" href="https://wa.me/919180419323?text=Hello%20Laxus%20Store%2C%20I%27d%20like%20to%20check%20your%20available%20electronics%20and%20gadget%20prices." target="_blank" rel="noopener">Enquire on WhatsApp</a></div></article>
+          <article class="product-card"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&auto=format&fit=crop" alt="Home and kitchen essentials"></div><div class="product-content"><h3>Home &amp; Kitchen</h3><p>Practical home essentials to make everyday tasks easier.</p><span class="price">Ask for current prices</span><a class="btn btn-primary btn-small" href="https://wa.me/919180419323?text=Hello%20Laxus%20Store%2C%20please%20share%20your%20home%20and%20kitchen%20product%20range." target="_blank" rel="noopener">Enquire on WhatsApp</a></div></article>
+          <article class="product-card"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=800&auto=format&fit=crop" alt="Beauty and personal care products"></div><div class="product-content"><h3>Beauty &amp; Care</h3><p>Personal care picks and beauty essentials to explore.</p><span class="price">Ask for current prices</span><a class="btn btn-primary btn-small" href="https://wa.me/919180419323?text=Hello%20Laxus%20Store%2C%20what%20beauty%20and%20personal%20care%20products%20are%20available%3F" target="_blank" rel="noopener">Enquire on WhatsApp</a></div></article>
+          <article class="product-card"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&auto=format&fit=crop" alt="Sports and fitness equipment"></div><div class="product-content"><h3>Sports &amp; Fitness</h3><p>Fitness accessories and activity essentials for your routine.</p><span class="price">Ask for current prices</span><a class="btn btn-primary btn-small" href="https://wa.me/919180419323?text=Hello%20Laxus%20Store%2C%20please%20tell%20me%20about%20available%20sports%20and%20fitness%20products." target="_blank" rel="noopener">Enquire on WhatsApp</a></div></article>
+          <article class="product-card"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1559454403-b8fb88521f11?w=800&auto=format&fit=crop" alt="Toys and games"></div><div class="product-content"><h3>Toys &amp; Games</h3><p>Fun finds and gift ideas for curious minds and families.</p><span class="price">Ask for current prices</span><a class="btn btn-primary btn-small" href="https://wa.me/919180419323?text=Hello%20Laxus%20Store%2C%20please%20share%20your%20available%20toys%20and%20games." target="_blank" rel="noopener">Enquire on WhatsApp</a></div></article>
+          <article class="product-card"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop" alt="Watches and accessories"></div><div class="product-content"><h3>Accessories</h3><p>Small everyday extras and giftable finishing touches.</p><span class="price">Ask for current prices</span><a class="btn btn-primary btn-small" href="https://wa.me/919180419323?text=Hello%20Laxus%20Store%2C%20what%20accessories%20do%20you%20currently%20have%20in%20stock%3F" target="_blank" rel="noopener">Enquire on WhatsApp</a></div></article>
+        </div>
+        <p class="price-note">Product categories are examples. Availability, delivery options and prices are confirmed directly by the store.</p>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <p class="eyebrow">A local store with a simple idea</p>
+          <div class="owner-line"><div class="avatar" aria-label="Gohil Ruchit initials">GR</div><div><h3>Meet Gohil Ruchit</h3><p>Owner, Laxus Store · Kalaburagi</p></div></div>
+          <h2>Shopping should feel simple.</h2>
+          <p>I started Laxus Store about a year ago with a straightforward goal: make it easier for people in our neighbourhood to discover useful products and get clear answers before buying.</p>
+          <p>Whether you know exactly what you need or are still comparing options, you can contact me directly. I want every enquiry to feel welcome, helpful and straightforward.</p>
+          <p class="signature">Gohil Ruchit</p>
+        </div>
+        <div class="feature-panel">
+          <div class="feature"><span class="feature-icon"><svg class="icon"><use href="#i-check"/></svg></span><div><strong>Helpful Guidance</strong><small>Ask questions before deciding.</small></div></div>
+          <div class="feature"><span class="feature-icon"><svg class="icon"><use href="#i-box"/></svg></span><div><strong>Product Enquiries</strong><small>Check what is currently available.</small></div></div>
+          <div class="feature"><span class="feature-icon"><svg class="icon"><use href="#i-chat"/></svg></span><div><strong>Direct Contact</strong><small>Speak with the store on WhatsApp.</small></div></div>
+          <div class="feature"><span class="feature-icon"><svg class="icon"><use href="#i-pin"/></svg></span><div><strong>Neighbourhood Store</strong><small>Based near Pillamma Temple.</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <p class="eyebrow">A look around</p><h2>Everyday Finds, All in One Place</h2><p class="section-intro">Explore a few product and shopping inspirations. For the latest stock, message Laxus Store directly.</p>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&fit=crop" alt="Retail store interior"><span class="gallery-label">Shopping essentials</span></div>
+          <div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop" alt="Mobile phone"><span class="gallery-label">Tech picks</span></div>
+          <div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&auto=format&fit=crop" alt="Fashion shopping"><span class="gallery-label">Everyday style</span></div>
+          <div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&auto=format&fit=crop" alt="Kitchen products"><span class="gallery-label">Home essentials</span></div>
+          <div class="gallery-item"><img loading="lazy" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop" alt="Watch accessory"><span class="gallery-label">Useful accessories</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <p class="eyebrow">Your experience matters</p><h2>We’d Love to Hear From You</h2><p class="section-intro">Have shopped with Laxus Store? Share honest feedback to help other local customers make informed choices.</p>
+        <div class="review-grid">
+          <article class="review-card"><div class="stars" aria-label="Five star rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 6.9-6.2-3.5-6.2 3.5 1.4-6.9L2 9.3l7-.8L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 6.9-6.2-3.5-6.2 3.5 1.4-6.9L2 9.3l7-.8L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 6.9-6.2-3.5-6.2 3.5 1.4-6.9L2 9.3l7-.8L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 6.9-6.2-3.5-6.2 3.5 1.4-6.9L2 9.3l7-.8L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 6.9-6.2-3.5-6.2 3.5 1.4-6.9L2 9.3l7-.8L12 2Z"/></svg></div><blockquote>“Tell us what you bought, how the service felt, and what you’d recommend to others.”</blockquote><div class="reviewer"><div class="reviewer-avatar">Y</div><div><strong>Your review</strong><small>Kalaburagi customer</small></div></div></article>
+          <article class="review-card"><div class="stars" aria-label="Five star rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 6.9-6.2-3.5-6.2 3.5 1.4-6.9L2 9.3l7-.8L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 6.9-6.2-3.5-6.2 3.5 1.4-6.9L2 9.3l7-.8L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 6.9-6.2-3.5-6.2 3.5 1.4-6.9L2 9.3l7-.8L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 6.9-6.2-3.5-6.2 3.5 1.4-6.9L2 9.3l7-.8L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 6.9-6.2-3.5-6.2 3.5 1.4-6.9L2 9.3l7-.8L12 2Z"/></svg></div><blockquote>“Your feedback helps us understand what we’re doing well and where we can improve.”</blockquote><div class="reviewer"><div class="reviewer-avatar">F</div><div><strong>Feedback welcome</strong><small>Local shopper</small></div></div></article>
+          <article class="review-card"><div class="stars" aria-label="Five star rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 6.9-6.2-3.5-6.2 3.5 1.4-6.9L2 9.3l7-.8L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 6.9-6.2-3.5-6.2 3.5 1.4-6.9L2 9.3l7-.8L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 6.9-6.2-3.5-6.2 3.5 1.4-6.9L2 9.3l7-.8L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 6.9-6.2-3.5-6.2 3.5 1.4-6.9L2 9.3l7-.8L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 6.9-6.2-3.5-6.2 3.5 1.4-6.9L2 9.3l7-.8L12 2Z"/></svg></div><blockquote>“Contact the store directly and let us know about your shopping experience.”</blockquote><div class="reviewer"><div class="reviewer-avatar">S</div><div><strong>Share your experience</strong><small>Customer community</small></div></div></article>
+        </div>
+        <p class="review-note">These are feedback prompts, not customer testimonials. Replace them with genuine reviews shared with permission.</p>
+      </div>
+    </section>
+
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <p class="eyebrow">Clear before you buy</p><h2>Pricing &amp; Availability</h2><p class="section-intro">Prices vary by product, model and current stock. Message us for the latest price before placing an order.</p>
+        <div class="price-list">
+          <div class="price-row"><span>Mobile phones &amp; accessories</span><strong>Ask for price</strong></div>
+          <div class="price-row"><span>Fashion &amp; clothing</span><strong>Ask for price</strong></div>
+          <div class="price-row"><span>Electronics &amp; gadgets</span><strong>Ask for price</strong></div>
+          <div class="price-row"><span>Home &amp; kitchen</span><strong>Ask for price</strong></div>
+          <div class="price-row"><span>Beauty &amp; personal care</span><strong>Ask for price</strong></div>
+          <div class="price-row"><span>Sports, toys &amp; games</span><strong>Ask for price</strong></div>
+          <div class="price-row"><span>Watches &amp; accessories</span><strong>Ask for price</strong></div>
+          <div class="price-row"><span>Delivery or collection</span><strong>Confirm with store</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <p class="eyebrow">We’re easy to reach</p><h2>Get in Touch</h2><p class="section-intro">Ask about a product, check availability, or get directions to Laxus Store in Tarfail, Kalaburagi.</p>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <a class="contact-method" href="tel:+919180419323"><span class="trust-icon"><svg class="icon"><use href="#i-phone"/></svg></span><span><strong>Call the Store</strong><small>+91 91804 19323</small></span></a>
+            <a class="contact-method" href="https://wa.me/919180419323?text=Hello%20Laxus%20Store%2C%20I%20have%20a%20product%20enquiry." target="_blank" rel="noopener"><span class="trust-icon" style="background:var(--green)"><svg class="icon"><use href="#i-chat"/></svg></span><span><strong>WhatsApp</strong><small>Message us about products</small></span></a>
+            <a class="contact-method" href="mailto:amitruchit95@gmail.com"><span class="trust-icon"><svg class="icon"><use href="#i-mail"/></svg></span><span><strong>Email</strong><small>amitruchit95@gmail.com</small></span></a>
+            <a class="contact-method" href="https://www.instagram.com/amit__gohil10/" target="_blank" rel="noopener"><span class="trust-icon"><svg class="icon"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg></span><span><strong>Instagram</strong><small>@amit__gohil10</small></span></a>
+            <div class="hours-card"><h3><svg class="icon" style="vertical-align:-4px;margin-right:7px"><use href="#i-clock"/></svg>Store Hours</h3><div class="hours-row"><span>Daily</span><strong>9:00 AM – 8:30 PM</strong></div><div class="hours-row"><span>Before visiting</span><strong>Call to confirm</strong></div><hr style="border:0;border-top:1px solid var(--line);margin:12px 0"><h3><svg class="icon" style="vertical-align:-4px;margin-right:7px"><use href="#i-pin"/></svg>Address</h3><p style="margin:0;color:var(--muted);font-size:.9rem">Tarfail, 13th Cross, near Pillamma Temple,<br>Kalaburagi, Karnataka 585102, India</p><a class="btn btn-outline btn-small" style="margin-top:15px" href="https://maps.google.com/?q=Tarfail+13th+Cross+Pillamma+Temple+Kalaburagi+Karnataka+585102" target="_blank" rel="noopener">Open in Google Maps</a></div>
+          </div>
+          <div class="map-wrap"><iframe title="Map to Laxus Store near Pillamma Temple, Kalaburagi" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Tarfail%2013th%20Cross%20Pillamma%20Temple%20Kalaburagi%20Karnataka%20585102&output=embed"></iframe></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <a class="brand" href="#home"><span class="brand-mark"><svg class="icon"><use href="#i-bag"/></svg></span><span><span class="brand-name">laxus store</span><span class="brand-tag">Shop with an open heart</span></span></a>
+        <nav class="footer-links" aria-label="Footer navigation"><a href="#home">Home</a><a href="#shop">Shop</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></nav>
+        <a class="btn btn-whatsapp" href="https://wa.me/919180419323?text=Hello%20Laxus%20Store%2C%20I%27d%20like%20to%20shop%20with%20you." target="_blank" rel="noopener"><svg class="icon"><use href="#i-chat"/></svg>Shop on WhatsApp</a>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Laxus Store. All rights reserved.</span><span class="credit">built with ❤️ by 21.coders</span></div>
+    </div>
+  </footer>
+
+  <div class="mobile-bar" aria-label="Quick contact">
+    <a class="btn btn-primary" href="tel:+919180419323"><svg class="icon"><use href="#i-phone"/></svg>Call</a>
+    <a class="btn btn-whatsapp" href="https://wa.me/919180419323?text=Hello%20Laxus%20Store%2C%20I%27d%20like%20to%20ask%20about%20your%20products." target="_blank" rel="noopener"><svg class="icon"><use href="#i-chat"/></svg>WhatsApp</a>
+  </div>
+  <script>
+    (function () {
+      var toggle = document.getElementById('menuToggle');
+      var nav = document.getElementById('navLinks');
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+      });
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'Open navigation menu');
+        });
+      });
+      document.getElementById('year').textContent = new Date().getFullYear();
+    }());
+  </script>
+</body>
+</html>
